@@ -1,0 +1,42 @@
+QDialog#LoginDialog, #RegisterDialog
+{
+    background-color:rgb(255,255,255)
+}
+
+#user_label, #pass_label
+{
+    color:black;
+}
+
+#err_tip[State='normal']{
+   color: green;
+}
+#err_tip[State='err']{
+   color: red;
+}
+
+
+#pass_visible[State='unvisible']{
+   border-image: url(:/img/unvisible.png);
+}
+#pass_visible[State='unvisible_hover']{
+   border-image: url(:/img/unvisible_hover.png);
+}
+#pass_visible[State='visible']{
+   border-image: url(:/img/visible.png);
+}
+#pass_visible[State='visible_hover']{
+   border-image: url(:/img/visible_hover.png);
+}
+#confirm_visible[State='unvisible']{
+   border-image: url(:/img/unvisible.png);
+}
+#confirm_visible[State='unvisible_hover']{
+   border-image: url(:/img/unvisible_hover.png);
+}
+#confirm_visible[State='visible']{
+   border-image: url(:/img/visible.png);
+}
+#confirm_visible[State='visible_hover']{
+   border-image: url(:/img/visible_hover.png);
+}

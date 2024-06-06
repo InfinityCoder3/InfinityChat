@@ -1,32 +1,31 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+build-InfinityChat*
+Debug
+x64
+.vs
+InfinityChat.pro.user
+node_modules
+config.ini
+config.json
+/client/InfinityChat/.qmake.stash
+/client/InfinityChat/bin/InfinityChat.exe
+/client/InfinityChat/bin/InfinityChat.ilk
+/client/InfinityChat/bin/InfinityChat.pdb
+/client/InfinityChat/InfinityChat.qtvscr
+/client/InfinityChat/InfinityChat.sln
+/client/InfinityChat/InfinityChat.vcxproj
+/client/InfinityChat/InfinityChat.vcxproj.filters
+/client/InfinityChat/InfinityChat.vcxproj.user
+/client/InfinityChat/InfinityChat_resource.rc
+/client/InfinityChat/release/moc_predefs.h.cbt
+/client/InfinityChat/ui_adduseritem.h
+/client/InfinityChat/ui_applyfriend.h
+/client/InfinityChat/ui_chatdialog.h
+/client/InfinityChat/ui_chatuserwid.h
+/client/InfinityChat/ui_findsuccessdlg.h
+/client/InfinityChat/ui_friendlabel.h
+/client/InfinityChat/ui_loadingdlg.h
+/client/InfinityChat/ui_logindialog.h
+/client/InfinityChat/ui_mainwindow.h
+/client/InfinityChat/ui_registerdialog.h
+/client/InfinityChat/ui_resetdialog.h
+ui_*.h
