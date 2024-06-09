@@ -1,6 +1,17 @@
+# 1.设计总览
+
+- 我们首先创建一个GateServer. cpp文件，绑定好端口后，便调用调用io_context服务，使得整个进程循环的跑起来，如果没有往io_context服务中注册事件，程序便会退出，如果注册了，则会一直运行下去
+- 往io_context注册监听服务，需要CServer服务器类，提供一个Start方法，该方法的作用是使用async_accept函数异步监听链接事件。
+- 当有新的链接过来时，我们便调用新连接对应的处理函数Start。处理连接的类叫做HttpConnection。在Start函数中，首先往ioc的这个socket中，注册一个异步读事件async_read，因为作为服务器来说，一般都是被动的一方。
+- 当读事件被调用后，则对读请求进行处理，这里需要区分Get请求和Post请求，http还有其他请求，这里仅先对这两种进行判断解析。
+- 为了使得程序结构更为清晰，独立出一个逻辑类，专门处理收到的http请求，名为LogicSystem，逻辑处理层，把解析成功与否的结果返回给HttpConnection层中即可，然后再在HttpConnection层，做进一步的解析，并将处理结果返回客户端
+- 由于http并不需要保持长连接状态，所以设置了一个心跳机制，每个60秒检测一次，如果期间没有数据交互，则将该链接关闭。
 
 
-###  使用 `std::make_shared<T>` 和 `std::shared_ptr<T>(new T)` 的区别
+
+
+
+#  2. 使用 `std::make_shared<T>` 和 `std::shared_ptr<T>(new T)` 的区别
 
 **区别**：
 
@@ -27,7 +38,7 @@ _instance = std::shared_ptr<T>(new T);
 - `std::make_shared<T>` 更高效，分配一次内存，适合大多数情况。
 - `std::shared_ptr<T>(new T)` 分配两次内存，适合需要自定义删除器或某些特定情况。
 
-### 2. 在 `MyClass` 中不声明 `friend class Singleton<MyClass>;` 是否可行
+# 3. 在 `MyClass` 中不声明 `friend class Singleton<MyClass>;` 是否可行
 
 **问题分析**：
 

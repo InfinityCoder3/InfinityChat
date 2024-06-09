@@ -271,7 +271,7 @@ void RegisterDialog::slot_reg_mod_finish(ReqId id, QString res, ErrorCodes err)
         showTip(tr("json解析失败"), false);
         return;
     }
-    //
+    // 执行函数对象
     _handlers[id](jsonDoc.object());
 }
 
